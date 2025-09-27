@@ -1,15 +1,27 @@
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
-    public float movementSpeed;
+    public float Speed;
     public int Score;
+    private Vector2 moveInput;
+    private Rigidbody2D rb;
 
-    void Update()
+    InputAction MoveAction;
+
+    void Start()
     {
-        float v = Input.GetAxis("Vertical");
-        float h = Input.GetAxis("Horizontal");
-        transform.position = transform.position + new Vector3(h * movementSpeed * Time.deltaTime, v * movementSpeed * Time.deltaTime, 0);
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        moveInput = context.ReadValue<Vector2>();
+    }
+
+    void FixedUpdate()
+    {
+        rb.linearVelocity = moveInput * Speed;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
