@@ -1,27 +1,71 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 public class PlayerMovement : MonoBehaviour
 {
-    public float Speed;
     public int Score;
     private Vector2 moveInput;
     private Rigidbody2D rb;
+    public float moveSpeed;
+    private GameObject Player;
+    private Vector2 PlayerPosition; 
 
-    InputAction MoveAction;
+    private void FindPlayer()
+    {
+        if (Player != null)
+        {
+            PlayerPosition = Player.transform.position;
+        }
+    }
 
-    void Start()
+    private void BuildPath()
+    {
+
+    }
+
+    public enum CharacterType
+    {
+        NPC,
+        Player
+    }
+
+    public CharacterType selectedCharacter;
+    
+    //if (selectedCharacter == CharacterType.Player)
+    //{
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void OnMove(InputAction.CallbackContext context)
+    private void OnEnable()
+    {
+        var playerInput = GetComponent<PlayerInput>();
+        if (playerInput != null)
+        {
+            playerInput.actions["Move"].performed += OnMove;
+            playerInput.actions["Move"].canceled += OnMove;
+        }
+    }
+
+    private void OnDisable()
+    {
+        var playerInput = GetComponent<PlayerInput>();
+        if (playerInput != null)
+        {
+            playerInput.actions["Move"].performed -= OnMove;
+            playerInput.actions["Move"].canceled -= OnMove;
+        }
+    }
+
+    private void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        rb.linearVelocity = moveInput * Speed;
+        rb.linearVelocity = moveInput * moveSpeed;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -32,4 +76,12 @@ public class PlayerMovement : MonoBehaviour
             Destroy(other);
         }
     }
-}
+    //}
+
+    //if (selectedCharacter == CharacterType.Enemy)
+    //{
+
+    //}
+
+
+}   
