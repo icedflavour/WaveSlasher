@@ -129,7 +129,6 @@ GameObject:
   m_Component:
   - component: {fileID: 244346435}
   - component: {fileID: 244346434}
-  - component: {fileID: 244346433}
   - component: {fileID: 244346432}
   - component: {fileID: 244346436}
   m_Layer: 0
@@ -197,19 +196,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &244346433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 244346431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 226f30daecdfb4426ad82a502baca14a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  moveSpeed: 5
 --- !u!50 &244346434
 Rigidbody2D:
   serializedVersion: 5
@@ -497,7 +483,6 @@ GameObject:
   m_Component:
   - component: {fileID: 546106562}
   - component: {fileID: 546106561}
-  - component: {fileID: 546106560}
   - component: {fileID: 546106559}
   m_Layer: 0
   m_Name: NPC
@@ -564,19 +549,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &546106560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546106558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 226f30daecdfb4426ad82a502baca14a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  moveSpeed: 5
 --- !u!50 &546106561
 Rigidbody2D:
   serializedVersion: 5
