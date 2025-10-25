@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Core;
 
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerMovement : MovementController
@@ -11,12 +12,18 @@ public class PlayerMovement : MovementController
     {
         base.Awake();
 
-        playerInput = GetComponent<PlayerInput>();
+        PlayerRegistry.RegisterPlayer(transform);
+        Debug.Log($"Player registered: {transform.name}");
 
+        playerInput = GetComponent<PlayerInput>();
         if (playerInput != null)
+        {
             moveAction = playerInput.actions["Move"];
+        }
         else
+        {
             Debug.LogError("PlayerInput component not found on " + gameObject.name);
+        }
     }
 
     private void OnEnable()
@@ -35,5 +42,11 @@ public class PlayerMovement : MovementController
     {
         if (moveAction != null)
             moveDirection = moveAction.ReadValue<Vector2>();
+    }
+
+    private void OnDestroy()
+    {
+        PlayerRegistry.UnregisterPlayer(transform);
+        Debug.Log($"Player unregistered: {transform.name}");
     }
 }
