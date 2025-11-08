@@ -381,7 +381,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!4 &244346435
 Transform:
   m_ObjectHideFlags: 0
@@ -722,6 +722,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1138328721306349610, guid: e2d4833f297ce40568fa8adbbf35e216, type: 3}
   m_PrefabInstance: {fileID: 1059797156}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &359915703 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8210393941383880600, guid: 7f5127df61454470ca8dc8f0fe5ab9c0, type: 3}
+  m_PrefabInstance: {fileID: 1939783304}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &412132318 stripped
 Transform:
@@ -2199,6 +2204,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1862895184}
+  - {fileID: 359915703}
   m_Father: {fileID: 1918629}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1788806720
@@ -2369,7 +2375,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1724767699}
     m_Modifications:
     - target: {fileID: 7747585685196281374, guid: 7f5127df61454470ca8dc8f0fe5ab9c0, type: 3}
       propertyPath: m_Name
@@ -2393,15 +2399,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8210393941383880600, guid: 7f5127df61454470ca8dc8f0fe5ab9c0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8210393941383880600, guid: 7f5127df61454470ca8dc8f0fe5ab9c0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8210393941383880600, guid: 7f5127df61454470ca8dc8f0fe5ab9c0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8210393941383880600, guid: 7f5127df61454470ca8dc8f0fe5ab9c0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2557,4 +2563,3 @@ SceneRoots:
   - {fileID: 1237735100}
   - {fileID: 1918629}
   - {fileID: 1788806721}
-  - {fileID: 1939783304}
