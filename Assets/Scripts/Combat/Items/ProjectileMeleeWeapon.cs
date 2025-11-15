@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ProjectileMeleeWeapon : MonoBehaviour
 {
-    public void Attack();
+    private WeaponType selectedOption;
 
     public enum WeaponType
     {
@@ -10,14 +10,16 @@ public class ProjectileMeleeWeapon : MonoBehaviour
         Melee
     }
 
+    private void Attack()
+    {   
+
+    }
+
     void Start()
     {
-        if(selectedOption == Option.Melee)
+        if(selectedOption == WeaponType.Melee)
         {
-            void Attack()
-            {
-                
-            }
+            Attack();
         }
     }
 }
