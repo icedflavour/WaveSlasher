@@ -7,8 +7,8 @@ namespace Core
     public class HealthController : MonoBehaviour, IDamageable
     {
         [Header("Health Settings")]
-        [SerializeField] private float maxHealth = 100f;
-        [SerializeField] private float regenRate = 0f; // HP per second
+        [SerializeField] private float maxHealth;
+        [SerializeField] private float regenRate;
 
         public float MaxHealth => maxHealth;
         public float CurrentHealth { get; private set; }
